@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:tenant_management_app/app_screens/discover_property.dart';
+import 'package:tenant_management_app/app_screens/match_property.dart';
 import 'package:tenant_management_app/app_screens/payment.dart';
 
 class Home extends StatefulWidget {
@@ -27,11 +28,6 @@ class _HomeState extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  IconButton(
-                    icon: Icon(Icons.search),
-                    onPressed: () {},
-                    color: Colors.black,
-                  ),
                   IconButton(
                     icon: Icon(Icons.notifications),
                     onPressed: () {},
@@ -66,10 +62,11 @@ class _HomeState extends State<Home> {
                                   fontSize: 24.0)),
                           Container(
                             width: 240.0,
-                            child: Text('Tenancy Details, Transactions, Maintenance Requests',
-                              style: TextStyle(color: Colors.blueAccent, fontSize: 12.0)),
+                            child: Text(
+                                'Tenancy Details, Maintenance Requests',
+                                style: TextStyle(
+                                    color: Colors.blueAccent, fontSize: 12.0)),
                           )
-                          
                         ],
                       ),
                       Material(
@@ -122,7 +119,7 @@ class _HomeState extends State<Home> {
                           shape: CircleBorder(),
                           child: Padding(
                             padding: EdgeInsets.all(16.0),
-                            child: Icon(Icons.home,
+                            child: Icon(Icons.favorite,
                                 color: Colors.white, size: 30.0),
                           )),
                       Padding(padding: EdgeInsets.only(bottom: 16.0)),
@@ -131,8 +128,16 @@ class _HomeState extends State<Home> {
                               color: Colors.black,
                               fontWeight: FontWeight.w700,
                               fontSize: 24.0)),
+                      Container(
+                        padding: EdgeInsets.only(top: 5.0),
+                        width: 240.0,
+                        child: Text('Set Your Preferences',
+                            style: TextStyle(
+                                color: Colors.blueAccent, fontSize: 12.0)),
+                      )
                     ]),
               ),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => MatchProperty()))
             ),
             _buildTile(
               Padding(
@@ -146,12 +151,15 @@ class _HomeState extends State<Home> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text('Rental Properties',
-                              style: TextStyle(color: Colors.redAccent)),
-                          Text('2',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.w700,
-                                  fontSize: 34.0))
+                                  fontSize: 24.0)),
+                          Text('2',
+                              style: TextStyle(
+                                  color: Colors.redAccent,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 28.0,))
                         ],
                       ),
                       Material(
@@ -172,7 +180,7 @@ class _HomeState extends State<Home> {
           staggeredTiles: [
             StaggeredTile.extent(2, 110.0),
             StaggeredTile.extent(1, 190.0),
-            StaggeredTile.extent(1, 200.0),
+            StaggeredTile.extent(1, 210.0),
             StaggeredTile.extent(2, 110.0),
           ],
         ));
