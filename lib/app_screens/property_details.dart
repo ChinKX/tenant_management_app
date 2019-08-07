@@ -216,24 +216,6 @@ class PropertyDetails extends StatelessWidget {
     );
   }
 
-  Widget _buildRow() {
-    return Row(
-      children: <Widget>[
-        Icon(
-          Icons.shop,
-          size: 12,
-          color: Colors.grey,
-        ),
-        SizedBox(width: 2),
-        Text('2')
-      ],
-    );
-  }
-
-  Widget _buildIndicator() {
-    return Container(width: 20, height: 5, color: Colors.white);
-  }
-
   Widget customListTile(String noOfRooms, String noOfBathrooms) {
     return Container(
       child: Row(
