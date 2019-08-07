@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:tenant_management_app/app_screens/discover_property.dart';
+import 'package:tenant_management_app/app_screens/general.dart';
 import 'package:tenant_management_app/app_screens/match_property.dart';
 import 'package:tenant_management_app/app_screens/payment.dart';
 
@@ -80,6 +81,7 @@ class _HomeState extends State<Home> {
                           )))
                     ]),
               ),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => GeneralPage()))
             ),
             _buildTile(
               Padding(
@@ -188,7 +190,7 @@ class _HomeState extends State<Home> {
 
   Widget _buildTile(Widget child, {Function() onTap}) {
     return Material(
-        elevation: 14.0,
+        elevation: 4.0,
         borderRadius: BorderRadius.circular(12.0),
         shadowColor: Color(0x802196F3),
         child: InkWell(

@@ -73,7 +73,7 @@ class _MatchPropertyState extends State<MatchProperty> {
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
-          return PropertyDetails(name, imgPath, rental, location, noOfRooms, noOfBathrooms);
+          return PropertyDetails(name: name, imgPath: imgPath, rental: rental, location: location, noOfRooms: noOfRooms, noOfBathrooms: noOfBathrooms);
         }));
       },
       child: Padding(

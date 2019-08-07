@@ -41,44 +41,44 @@ class _DiscoverPropertyState extends State<DiscoverProperty> {
           child: Column(
             children: <Widget>[
               Padding(
-        padding: EdgeInsets.symmetric(horizontal: 15.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            GestureDetector(
-              child: Icon(
-                Icons.search,
-                color: Colors.black54,
+                padding: EdgeInsets.symmetric(horizontal: 15.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    GestureDetector(
+                      child: Icon(
+                        Icons.search,
+                        color: Colors.black54,
+                      ),
+                      onTap: () {},
+                    ),
+                    SizedBox(
+                      width: 10.0,
+                    ),
+                    Expanded(
+                      child: TextField(
+                        decoration: InputDecoration(
+                            border: InputBorder.none, hintText: "Search..."),
+                        onSubmitted: (String place) {
+                          if (place.isNotEmpty) {
+                            //performSearch(place);
+                          }
+                        },
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => SettingsScreen('search')));
+                      },
+                      child: Icon(
+                        FontAwesomeIcons.slidersH,
+                        color: Colors.black54,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              onTap: () {},
-            ),
-            SizedBox(
-              width: 10.0,
-            ),
-            Expanded(
-              child: TextField(
-                decoration: InputDecoration(
-                    border: InputBorder.none, hintText: "Search..."),
-                onSubmitted: (String place) {
-                  if (place.isNotEmpty) {
-                    //performSearch(place);
-                  }
-                },
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => SettingsScreen('search')));
-              },
-              child: Icon(
-                FontAwesomeIcons.slidersH,
-                color: Colors.black54,
-              ),
-            ),
-          ],
-        ),
-      ),
               Expanded(
                 child: ListView(
                   children: <Widget>[
@@ -114,7 +114,7 @@ class _DiscoverPropertyState extends State<DiscoverProperty> {
           Navigator.push(context,
               MaterialPageRoute(builder: (BuildContext context) {
             return PropertyDetails(
-                name, imgPath, rental, location, noOfRooms, noOfBathrooms);
+                name: name, imgPath: imgPath, rental: rental, location: location, noOfRooms: noOfRooms, noOfBathrooms: noOfBathrooms);
           }));
         },
         child: Padding(

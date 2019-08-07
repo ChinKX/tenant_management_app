@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:tenant_management_app/app_screens/payment_form.dart';
-import 'package:tenant_management_app/models/payment_model.dart';
+import 'package:tenant_management_app/models/maintenance_model.dart';
 
-class PaymentCardWidget extends StatefulWidget {
-  final PaymentModel payment;
+class MaintenanceCardWidget extends StatefulWidget {
+  final MaintenanceModel maintenance;
 
-  const PaymentCardWidget({Key key, this.payment}) : super(key: key);
+  const MaintenanceCardWidget({Key key, this.maintenance}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _PaymentCardWidgetState();
+  State<StatefulWidget> createState() => _MaintenanceCardWidgetState();
 }
 
-class _PaymentCardWidgetState extends State<PaymentCardWidget> {
+class _MaintenanceCardWidgetState extends State<MaintenanceCardWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,19 +20,19 @@ class _PaymentCardWidgetState extends State<PaymentCardWidget> {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Text(
-              "RM ${widget.payment.amount}",
+              "${widget.maintenance.completed ? "Done" : "In Progress"}",
               style: TextStyle(
                   inherit: true, fontWeight: FontWeight.w700, fontSize: 16.0),
             ),
             IconButton(
-              onPressed: !widget.payment.completed ? () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (_) => PaymentForm()));
+              onPressed: !widget.maintenance.completed ? () {
+                //Navigator.of(context).push(MaterialPageRoute(builder: (_) => MaintenanceForm()));
               } : null,
-              icon: !widget.payment.completed ? Icon(
-                  Icons.payment,
+              icon: !widget.maintenance.completed ? Icon(
+                  Icons.assignment,
                   color: Colors.blueAccent,
                 ) : Icon(
-                  Icons.done,
+                  Icons.assignment_turned_in,
                   color: Colors.green,
                 ),
             )
@@ -44,18 +43,18 @@ class _PaymentCardWidgetState extends State<PaymentCardWidget> {
           child: Material(
             elevation: 10,
             shape: CircleBorder(),
-            shadowColor: widget.payment.color.withOpacity(0.4),
+            shadowColor: widget.maintenance.color.withOpacity(0.4),
             child: Container(
               height: 50,
               width: 50,
               decoration: BoxDecoration(
-                color: widget.payment.color,
+                color: widget.maintenance.color,
                 shape: BoxShape.circle,
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8.0),
                 child: Icon(
-                  widget.payment.icon,
+                  widget.maintenance.icon,
                   color: Colors.white,
                 ),
               ),
@@ -66,7 +65,7 @@ class _PaymentCardWidgetState extends State<PaymentCardWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Text(
-              widget.payment.name,
+              widget.maintenance.name,
               style: TextStyle(
                   inherit: true, fontWeight: FontWeight.w700, fontSize: 16.0),
             ),
@@ -77,13 +76,13 @@ class _PaymentCardWidgetState extends State<PaymentCardWidget> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text(widget.payment.date,
+              Text(widget.maintenance.date,
                   style: TextStyle(
                       inherit: true, fontSize: 12.0, color: Colors.black45)),
               SizedBox(
                 width: 20,
               ),
-              Text(widget.payment.hour,
+              Text(widget.maintenance.hour,
                   style: TextStyle(
                       inherit: true, fontSize: 12.0, color: Colors.black45)),
               Spacer(),

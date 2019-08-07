@@ -8,8 +8,8 @@ class PropertyDetails extends StatelessWidget {
   String noOfRooms;
   String noOfBathrooms;
 
-  PropertyDetails(this.name, this.imgPath, this.rental, this.location,
-      this.noOfRooms, this.noOfBathrooms);
+  PropertyDetails({@required this.name, @required this.imgPath, @required this.rental, @required this.location,
+     @required this.noOfRooms, @required this.noOfBathrooms});
 
   @override
   Widget build(BuildContext context) {
