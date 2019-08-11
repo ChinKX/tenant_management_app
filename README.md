@@ -1,4 +1,4 @@
-# tenant_management_app-tenant
+# tenant_management_app
 
 A new Flutter project.
 
