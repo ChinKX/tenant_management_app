@@ -61,8 +61,8 @@ class GeneralPage extends StatelessWidget {
           Row(
             children: <Widget>[
               colorCard("Rental Property", 'Alam Nusantara, Setia Alam',
-                  context, Color(0xFF1b5bff), Icons.location_on),
-              colorCard("Landlord", 'Chris', context, Color(0xFFff3f5e),
+                  context, Color(0xFFF67280), Icons.location_on),
+              colorCard("Landlord", 'Chris', context, Color(0xFFC06C84),
                   Icons.person),
             ],
           ),
@@ -95,7 +95,7 @@ class GeneralPage extends StatelessWidget {
               height: screenAwareSize(
                   _media.longestSide <= 775 ? 180 : 130, context),
               decoration: BoxDecoration(
-                color: Color(0xff03cdd8),
+                color: Color(0xff6C5B7B),
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
@@ -214,7 +214,7 @@ class GeneralPage extends StatelessWidget {
               height:
                   screenAwareSize(_media.longestSide <= 775 ? 180 : 130, context),
               decoration: BoxDecoration(
-                color: Color(0xfff76262),
+                color: Color(0xff355C7D),
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
