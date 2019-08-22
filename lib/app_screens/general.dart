@@ -12,7 +12,7 @@ class GeneralPage extends StatelessWidget {
   MaintenanceModel maintenance = getMaintenancesCard()[0];
   TenancyModel tenancy = getTenanciesCard()[0];
 
-  String name = 'Chris';
+  String name = 'Walker';
   String imgPath = 'assets/images/chris.jpg';
   String rental = '2,800';
   String location = 'Alam Nusantara, Setia Alam';
@@ -62,7 +62,7 @@ class GeneralPage extends StatelessWidget {
             children: <Widget>[
               colorCard("Rental Property", 'Alam Nusantara, Setia Alam',
                   context, Color(0xFFF67280), Icons.location_on),
-              colorCard("Landlord", 'Chris', context, Color(0xFFC06C84),
+              colorCard("Landlord", 'Walker', context, Color(0xFFC06C84),
                   Icons.person),
             ],
           ),
